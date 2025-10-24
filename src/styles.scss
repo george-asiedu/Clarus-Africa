@@ -1,0 +1,56 @@
+@use "tailwindcss";
+@import "flowbite/src/themes/default";
+
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --color-brand-blue: #0A2460;
+    --color-vibrant-gold: #FF9F1C;
+    --color-success: #2EC4B6;
+    --color-amber: #FFBF00;
+    --color-error-red: #D90429;
+    --color-headings: #212529;
+    --color-paragraph: #6C757D;
+    --color-borders: #E9ECEF;
+    --color-background: #F8F9FA;
+    --color-primary-btn: #FF6B00;
+    --color-sec-btn: #85A9D8;
+    --color-pri-btn-disabled: #FFB47E;
+    --color-pri-btn-disabled: #DBDDE0;
+}
+
+
+@layer base {
+    * {
+        @apply transition-colors duration-300 ease-linear;
+    }
+
+    body {
+        @apply bg-background;
+        font-family: "Sora", sans-serif;
+    }
+
+    a {
+        @apply transition delay-150 duration-300 ease-in-out text-paragraph;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply tracking-wide text-headings font-semibold;
+    }
+    
+    h1 {
+        @apply text-3xl font-bold lg:text-4xl;
+    }
+    
+    p {
+        @apply text-[15px] text-paragraph tracking-wide;
+    }
+}
